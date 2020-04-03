@@ -114,8 +114,22 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "100",
+            "value": "0",
             "varName": "save_countdown",
+            "varType": 0
+        },
+        {
+            "id": "db59fa4d-60cb-491f-9479-bc290061caaa",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "goal_countdown",
             "varType": 0
         }
     ],

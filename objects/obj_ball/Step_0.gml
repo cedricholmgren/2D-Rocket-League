@@ -49,6 +49,7 @@ if (x < obj_wallL.x + 36) {
 			bluecar.image_angle = 0
 			possible_save = 0
 			last_touched_by = 0
+			goal_countdown = 200
 		}
 	} else {
 		x = obj_wallL.x + 36
@@ -84,6 +85,7 @@ if (x > obj_wallR.x - 36) {
 			bluecar.image_angle = 0
 			possible_save = 0
 			last_touched_by = 0
+			goal_countdown = 200
 		}
 	} else {
 		x = obj_wallR.x - 36

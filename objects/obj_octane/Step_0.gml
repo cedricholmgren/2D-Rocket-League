@@ -1,12 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// turning -- gamepad
 image_angle += facing * 3 * gamepad_axis_value(gp_number, gp_axislv)
 image_angle += -3 * gamepad_axis_value(gp_number, gp_axislh)
+
+
+// keyboard players
+var kbd_boosting = 0
+var kbd_left = 0
+var kbd_right = 0
+var kbd_jump = 0
+if (facing == 1) {
+	// if (keyboard_check(ord("Q"))) image_angle += 3
+	// if (keyboard_check(ord("E"))) image_angle -= 3
+	if (keyboard_check(ord("S"))) kbd_boosting = 1
+	if (keyboard_check(ord("A"))) kbd_left = 1
+	if (keyboard_check(ord("D"))) kbd_right = 1
+	if (keyboard_check_pressed(ord("W"))) kbd_jump = 1
+} else {
+	// if (keyboard_check(ord("U"))) image_angle += 3
+	// if (keyboard_check(ord("O"))) image_angle -= 3
+	if (keyboard_check(ord("K"))) kbd_boosting = 1
+	if (keyboard_check(ord("L"))) kbd_left = 1
+	if (keyboard_check(ord("J"))) kbd_right = 1
+	if (keyboard_check_pressed(ord("I"))) kbd_jump = 1
+}
+	
+
 if (image_angle < -179) image_angle += 360
 if (image_angle > 180) image_angle -= 360
 
-if (gamepad_button_check(gp_number, gp_face2)) {
+if (gamepad_button_check(gp_number, gp_face2) || kbd_boosting) {
 	//boost
 	var boost_angle = image_angle
 	if(facing == -1) boost_angle = image_angle + 180
@@ -31,28 +56,29 @@ if (y > room_height - 6) {
 	if (image_angle > -9 &&  image_angle < 9) image_angle = 0
 	
 	if (image_angle > -20 && image_angle < 20) {
-		if (gamepad_button_check(gp_number, gp_shoulderlb)) {
+		if (gamepad_button_check(gp_number, gp_shoulderlb) || kbd_left) {
 			hspeed -= 0.2 * facing
 		} 
-		if (gamepad_button_check(gp_number, gp_shoulderrb) ) {
+		if (gamepad_button_check(gp_number, gp_shoulderrb) || kbd_right) {
 			hspeed += 0.2 * facing
 		} 
 
 		jumps_available = 2
 
-		if (gamepad_button_check_pressed(gp_number, gp_face1)) {
+		if (gamepad_button_check_pressed(gp_number, gp_face1) || kbd_jump) {
 			jumps_available = jumps_available - 1
 			vspeed = -4
 			effect_create_below(ef_explosion, x, y, 1, c_gray)
 		} 
 	}
 } else  {
-	if (gamepad_button_check_pressed(gp_number, gp_face1) && jumps_available > 0) {
+	if (kbd_left) image_angle += (3 * facing)
+	if (kbd_right) image_angle -= (3 * facing)
+	if ((gamepad_button_check_pressed(gp_number, gp_face1) || kbd_jump) && jumps_available > 0) {
 		// jumping
 		jumps_available = jumps_available - 1
 		motion_add(image_angle + 90, 4)
 		effect_create_below(ef_explosion, x, y, 1, c_gray)
-		
 	}
 }
 
