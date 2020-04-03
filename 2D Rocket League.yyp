@@ -50,7 +50,7 @@
             "Key": "1b6c5cb5-6a2a-4eea-a056-e6b314516b21",
             "Value": {
                 "id": "5569ed34-ad53-41c3-b1bb-f2da297c0f56",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\arena\\arena.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -83,6 +83,14 @@
             "Value": {
                 "id": "8bafc692-b569-41d1-8dd9-6a8ec7903374",
                 "resourcePath": "sprites\\spr_octane\\spr_octane.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2e627006-2d72-4482-b7dc-ff2814318207",
+            "Value": {
+                "id": "21b01729-48ec-420d-9074-5f474d985235",
+                "resourcePath": "sprites\\spr_ball\\spr_ball.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -255,11 +263,27 @@
             }
         },
         {
+            "Key": "e712f5bf-683e-4fdc-bc37-bc2dfe44fb50",
+            "Value": {
+                "id": "4dffc92e-4594-45ca-a6a6-111ffd0bcd74",
+                "resourcePath": "sprites\\spr_octane_red\\spr_octane_red.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "f51a9141-84ed-4ff6-b410-ac2ee5ffde50",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "fcdd6c12-32a9-41e2-b793-e2baafba7c53",
+            "Value": {
+                "id": "dcc3831a-bbce-4611-aeeb-c25d711d509f",
+                "resourcePath": "objects\\obj_ball\\obj_ball.yy",
+                "resourceType": "GMObject"
             }
         }
     ],
