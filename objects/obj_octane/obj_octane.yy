@@ -188,6 +188,20 @@
             "value": "0",
             "varName": "shots",
             "varType": 0
+        },
+        {
+            "id": "6be7ace9-d538-4423-b999-8e8dcd2a6aa1",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "AI_on",
+            "varType": 3
         }
     ],
     "solid": false,
