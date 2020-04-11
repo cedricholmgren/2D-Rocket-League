@@ -1,5 +1,39 @@
 /// @description Insert description here
 // You can write your code in this editor
+var kbd_boosting = 0
+var kbd_left = 0
+var kbd_right = 0
+var kbd_jump = 0
+
+
+var on_ground = y >= room_height - 6
+
+
+
+if (AI_on == true) {
+	if (on_ground) {
+		if (x < obj_ball.x) {
+			if (obj_ball.x - x < 300) {
+				kbd_jump = 1
+			} else {
+				kbd_right = 1
+			}
+		} else {
+			kbd_left = 1
+		}
+	} else {
+		if (x < obj_ball.x) {
+			var angle_to_ball = point_direction(x, y, obj_ball.x, obj_ball.y - 20)
+			var dif = angle_difference(image_angle, angle_to_ball)
+			if (dif < 0) {
+				kbd_left = 1
+			} else {
+				kbd_right = 1
+			}
+			if (abs(dif) < 30 && obj_ball.y - y < 50) kbd_boosting = 1
+		}
+	}
+}
 
 // turning -- gamepad
 image_angle += facing * 3 * gamepad_axis_value(gp_number, gp_axislv)
@@ -7,10 +41,7 @@ image_angle += -3 * gamepad_axis_value(gp_number, gp_axislh)
 
 
 // keyboard players
-var kbd_boosting = 0
-var kbd_left = 0
-var kbd_right = 0
-var kbd_jump = 0
+
 if (facing == 1) {
 	// if (keyboard_check(ord("Q"))) image_angle += 3
 	// if (keyboard_check(ord("E"))) image_angle -= 3
@@ -45,7 +76,7 @@ if (gamepad_button_check(gp_number, gp_face2) || kbd_boosting) {
 	effect_create_below(ef_smoke, x + smoke_x, y + smoke_y, 0.1, boost_color)
 }
 
-if (y > room_height - 6) {
+if (on_ground) {
 	y = room_height - 6
 	vspeed = 0
 	if (hspeed < 0) hspeed += 0.05
@@ -112,3 +143,4 @@ if (x > obj_wallR.x - 25) {
 }
 
 if (speed > 8) speed = 8
+

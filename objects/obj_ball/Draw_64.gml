@@ -6,7 +6,6 @@ var midY = room_height / 2
 	
 if (save_countdown > 0) {
 	save_countdown -= 1
-	
 	draw_set_halign(fa_middle)
 	draw_text_ext_transformed_color(midX, midY, "WHAT A SAVE!", 20, 200, 3, 3, 0, c_white, c_white, c_white, c_white, save_countdown / 100)
 }

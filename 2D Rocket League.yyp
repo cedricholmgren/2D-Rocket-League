@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "05fab7ad-3a10-4836-a5fd-1b5894d956c2",
+            "Value": {
+                "id": "27a9845c-f5ec-4336-9470-5805e370e377",
+                "resourcePath": "objects\\obj_menu\\obj_menu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "08a8603b-8372-4b55-ba7a-542c6200db74",
             "Value": {
                 "id": "fbb1cf38-e80e-49c4-b4f8-6dcbdfe1dec6",
@@ -52,6 +60,14 @@
                 "id": "5569ed34-ad53-41c3-b1bb-f2da297c0f56",
                 "resourcePath": "rooms\\arena\\arena.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "1be16ce4-f9e0-4163-8b11-80fe77f9e8b7",
+            "Value": {
+                "id": "052bd33b-f454-4a3a-90da-635a05d055b6",
+                "resourcePath": "sounds\\goaaaal\\goaaaal.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -175,6 +191,14 @@
             }
         },
         {
+            "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
+            "Value": {
+                "id": "7f2a3964-dea5-4640-8f8c-b467c9440e37",
+                "resourcePath": "options\\html5\\options_html5.yy",
+                "resourceType": "GMHtml5Options"
+            }
+        },
+        {
             "Key": "81f3e569-8385-4624-96fb-49ddfcf099f2",
             "Value": {
                 "id": "9cb51af0-2600-46a3-8bf5-332c12618ee0",
@@ -220,6 +244,22 @@
                 "id": "349db133-831c-4902-a16f-24c7a7c2ba4c",
                 "resourcePath": "sprites\\spr_wall\\spr_wall.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c156edcc-1dc9-4863-be24-fde1a2b11883",
+            "Value": {
+                "id": "6e6da5c2-ede2-48d8-b624-0be7e9338ce9",
+                "resourcePath": "rooms\\rm_menu\\rm_menu.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "cb4608eb-9c55-457a-b164-3e89fc1cdfde",
+            "Value": {
+                "id": "5a98d8ad-ca09-41d5-b518-9f72edcfd975",
+                "resourcePath": "sounds\\What_a_save\\What_a_save.yy",
+                "resourceType": "GMSound"
             }
         },
         {

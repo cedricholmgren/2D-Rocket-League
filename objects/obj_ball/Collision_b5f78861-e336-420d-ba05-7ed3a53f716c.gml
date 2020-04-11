@@ -24,7 +24,7 @@ if (other.facing == -1) {
 	goalX = obj_wallL.x
 	myGoalX = obj_wallR.x
 }
-var goalY = 514
+var goalY = 511
 
 var dir_to_goal = point_direction(x, y, goalX, goalY)
 var original_goal_angle_diff = abs(angle_difference(original_direction, dir_to_goal))

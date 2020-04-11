@@ -38,7 +38,7 @@ if (x < obj_wallL.x + 36) {
 			y = obj_ceiling.y + 100
 			speed = 0
 			redcar.goals += 1
-			
+			audio_play_sound(goaaaal, 0, false)
 			redcar.x = redcar.resetX
 			redcar.y = redcar.resetY
 			redcar.speed = 0
@@ -74,6 +74,7 @@ if (x > obj_wallR.x - 36) {
 			speed = 0
 			
 			var bluecar = instance_find(obj_octane, 0)
+			audio_play_sound(goaaaal, 0, false)
 			bluecar.goals += 1
 			redcar.x = redcar.resetX
 			redcar.y = redcar.resetY
@@ -104,6 +105,7 @@ if (possible_save != 0) {
 			// save!
 			possible_save = 0
 			bluecar.saves += 1
+			audio_play_sound(What_a_save, 0, false)
 			save_countdown = 100
 		}
 	} else {
@@ -112,6 +114,7 @@ if (possible_save != 0) {
 			// save!
 			possible_save = 0
 			redcar.saves += 1
+			audio_play_sound(What_a_save, 0, false)
 			save_countdown = 100
 		}
 	}
