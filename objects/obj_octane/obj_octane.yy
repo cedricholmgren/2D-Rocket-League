@@ -43,6 +43,16 @@
             "enumb": 0,
             "eventtype": 4,
             "m_owner": "4ccf3b29-0f3d-4fcb-9164-b4594dcfccfb"
+        },
+        {
+            "id": "b5edaf58-f920-4b23-82f2-a848218ab8dc",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 2,
+            "m_owner": "4ccf3b29-0f3d-4fcb-9164-b4594dcfccfb"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -201,6 +211,20 @@
             "resourceFilter": 1023,
             "value": "True",
             "varName": "AI_on",
+            "varType": 3
+        },
+        {
+            "id": "68277426-e1d9-4b84-a93e-bf6a0fbac00e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "kbd_press",
             "varType": 3
         }
     ],
