@@ -226,6 +226,11 @@
             "value": "0",
             "varName": "kbd_press",
             "varType": 3
+        },
+        {
+            "id": "3422e59c-4d7e-40e5-af8f-084c0e0338ae",
+            "varName": "boost_sound_index",
+            "varType": 5
         }
     ],
     "solid": false,
