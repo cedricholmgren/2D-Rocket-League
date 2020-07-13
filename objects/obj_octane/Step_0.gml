@@ -1,14 +1,12 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description AI and keyboard controls
 var kbd_boosting = 0
 var kbd_left = 0
 var kbd_right = 0
 var kbd_jump = 0
 
+if (gamepad_button_check(gp_number, gp_face2)) kbd_boosting = 1
 
 var on_ground = y >= room_height - 6
-
-
 
 if (AI_on == true) {
 	if (on_ground) {
@@ -62,7 +60,7 @@ if (facing == 1) {
 if (image_angle < -179) image_angle += 360
 if (image_angle > 180) image_angle -= 360
 
-if (gamepad_button_check(gp_number, gp_face2) || kbd_boosting) {
+if (kbd_boosting) {
 	//boost
 	var boost_angle = image_angle
 	if(facing == -1) boost_angle = image_angle + 180
@@ -99,7 +97,7 @@ if (on_ground) {
 		if (gamepad_button_check_pressed(gp_number, gp_face1) || kbd_jump) {
 			jumps_available = jumps_available - 1
 			vspeed = -4
-			effect_create_below(ef_explosion, x, y, 1, c_gray)
+			// effect_create_below(ef_explosion, x, y, 1, c_gray)
 		} 
 	}
 } else  {
@@ -109,7 +107,7 @@ if (on_ground) {
 		// jumping
 		jumps_available = jumps_available - 1
 		motion_add(image_angle + 90, 4)
-		effect_create_below(ef_explosion, x, y, 1, c_gray)
+		// effect_create_below(ef_explosion, x, y, 1, c_gray)
 	}
 }
 
@@ -124,8 +122,8 @@ if (y < obj_ceiling.y + 25) {
 }
 
 // Left wall
-if (x < obj_wallL.x + 25) {
-	x = obj_wallL.x + 25
+if (x < obj_wall_left.x + 25) {
+	x = obj_wall_left.x + 25
 	hspeed = 0
 	
 	if (image_angle > -110 && image_angle < -70) {
@@ -134,8 +132,8 @@ if (x < obj_wallL.x + 25) {
 }
 
 // Right wall
-if (x > obj_wallR.x - 25) {
-	x = obj_wallR.x - 25
+if (x > obj_wall_right.x - 25) {
+	x = obj_wall_right.x - 25
 	hspeed = 0
 	if (image_angle > 70 && image_angle < 110) {
 		jumps_available = 1
@@ -144,3 +142,13 @@ if (x > obj_wallR.x - 25) {
 
 if (speed > 8) speed = 8
 
+if (kbd_boosting) {
+	if (!boost_sound_index) {
+		boost_sound_index = audio_play_sound(snd_thrusters, 12, true)
+	}
+} else {
+	if (boost_sound_index) {
+		audio_stop_sound(boost_sound_index)
+		boost_sound_index = 0
+	}
+}

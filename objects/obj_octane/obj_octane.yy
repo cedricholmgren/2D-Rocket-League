@@ -202,6 +202,20 @@
             "value": "True",
             "varName": "AI_on",
             "varType": 3
+        },
+        {
+            "id": "3422e59c-4d7e-40e5-af8f-084c0e0338ae",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "boost_sound_index",
+            "varType": 5
         }
     ],
     "solid": false,

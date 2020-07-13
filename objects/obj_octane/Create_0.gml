@@ -5,4 +5,4 @@ gravity = 0.1
 resetX = x
 resetY = y
 boost_color = c_blue
-AI_on = true
+AI_on = false

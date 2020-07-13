@@ -23,7 +23,7 @@ if (y < obj_ceiling.y + 36) {
 }
 
 // Left wall
-if (x < obj_wallL.x + 36) {
+if (x < obj_wall_left.x + 36) {
 	// Check goal
 	if (y > goal_top && y < goal_bottom) {
 		// let it through		
@@ -32,13 +32,15 @@ if (x < obj_wallL.x + 36) {
 		if (y < goal_top + 20) vspeed = abs(vspeed)
 		if (y > goal_bottom - 20) vspeed = -1 * abs(vspeed)
 		
-		if (x < obj_wallL.x - 36) {
-			effect_create_above(ef_explosion, x, y, 100, c_red)
+		if (x < obj_wall_left.x - 36) {
+			// effect_create_above(ef_explosion, x, y, 100, c_red)
 			x = room_width / 2
 			y = obj_ceiling.y + 100
 			speed = 0
 			redcar.goals += 1
-			audio_play_sound(goaaaal, 0, false)
+			
+			audio_play_sound(snd_explosion, 0, false)
+			
 			redcar.x = redcar.resetX
 			redcar.y = redcar.resetY
 			redcar.speed = 0
@@ -52,13 +54,13 @@ if (x < obj_wallL.x + 36) {
 			goal_countdown = 200
 		}
 	} else {
-		x = obj_wallL.x + 36
+		x = obj_wall_left.x + 36
 		hspeed = dampening * abs(hspeed)
 	}
 }
 
 // Right wall
-if (x > obj_wallR.x - 36) {
+if (x > obj_wall_right.x - 36) {
 	// Check goal
 	if (y > goal_top && y < goal_bottom) {
 		// let it through
@@ -67,14 +69,16 @@ if (x > obj_wallR.x - 36) {
 		if (y < goal_top + 20) vspeed = abs(vspeed)
 		if (y > goal_bottom - 20) vspeed = -1 * abs(vspeed)
 
-		if (x > obj_wallR.x + 36) {
-			effect_create_above(ef_explosion, x, y, 100, c_blue)
+		if (x > obj_wall_right.x + 36) {
+			// effect_create_above(ef_explosion, x, y, 100, c_blue)
 			x = room_width / 2
 			y = obj_ceiling.y + 100
 			speed = 0
 			
 			var bluecar = instance_find(obj_octane, 0)
-			audio_play_sound(goaaaal, 0, false)
+			
+			audio_play_sound(snd_explosion, 0, false)
+			
 			bluecar.goals += 1
 			redcar.x = redcar.resetX
 			redcar.y = redcar.resetY
@@ -89,18 +93,18 @@ if (x > obj_wallR.x - 36) {
 			goal_countdown = 200
 		}
 	} else {
-		x = obj_wallR.x - 36
+		x = obj_wall_right.x - 36
 		hspeed = dampening * abs(hspeed) * -1
 	}
 }
 
 if (possible_save != 0) {
-	var rightGoalX = obj_wallR.x
-	var leftGoalX = obj_wallL.x
-	var goalY = 514
+	var right_goal_x = obj_wall_right.x
+	var left_goal_x = obj_wall_left.x
+	var goal_y = 514
 
 	if (possible_save == 1) {
-		var dist_to_my_goal = point_distance(x, y, leftGoalX, goalY)
+		var dist_to_my_goal = point_distance(x, y, left_goal_x, goal_y)
 		if (dist_to_my_goal > goal_save_radius) {
 			// save!
 			possible_save = 0
@@ -109,7 +113,7 @@ if (possible_save != 0) {
 			save_countdown = 100
 		}
 	} else {
-		var dist_to_my_goal = point_distance(x, y, rightGoalX, goalY)
+		var dist_to_my_goal = point_distance(x, y, right_goal_x, goal_y)
 		if (dist_to_my_goal > goal_save_radius) {
 			// save!
 			possible_save = 0
@@ -121,19 +125,19 @@ if (possible_save != 0) {
 }
 
 if (last_touched_by != 0) {
-	var rightGoalX = obj_wallR.x
-	var leftGoalX = obj_wallL.x
+	var right_goal_x = obj_wall_right.x
+	var left_goal_x = obj_wall_left.x
 	var goalY = 514
 
 	if (last_touched_by == 1) {
-		var dist_to_goal = point_distance(x, y, rightGoalX, goalY)
+		var dist_to_goal = point_distance(x, y, right_goal_x, goalY)
 		if (dist_to_goal < 100) {
 			// shot!
 			last_touched_by = 0
 			bluecar.shots += 1
 		}
 	} else {
-		var dist_to_goal = point_distance(x, y, leftGoalX, goalY)
+		var dist_to_goal = point_distance(x, y, left_goal_x, goalY)
 		if (dist_to_goal < 100) {
 			// shot!
 			last_touched_by = 0
@@ -145,6 +149,7 @@ if (last_touched_by != 0) {
 
 if (speed > 12) speed = 12
 
+if (bounce_cooldown > 0) bounce_cooldown -= 1
 
 
 

@@ -131,6 +131,20 @@
             "value": "0",
             "varName": "goal_countdown",
             "varType": 0
+        },
+        {
+            "id": "9235eead-4c48-4539-95ad-05d269618b5e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "bounce_cooldown",
+            "varType": 0
         }
     ],
     "solid": false,

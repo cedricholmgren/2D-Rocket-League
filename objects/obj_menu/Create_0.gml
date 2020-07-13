@@ -3,3 +3,5 @@
 menu = ["Create Game", "Exit"]
 
 cur_index = 0
+
+audio_play_sound(music_ipsi, 1, true)
